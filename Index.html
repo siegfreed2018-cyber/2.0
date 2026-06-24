@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Garnacha Maracucha | Menú Gourmet</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --primary: #0033a0; --primary-light: #f0f5ff; --accent: #ffcc00; --accent-dark: #e6b800; --danger: #cf142b; --whatsapp: #25D366; --location-blue: #0284c7; --text-main: #0f172a; --text-muted: #64748b; --bg-main: #f8fafc; --card-bg: #ffffff; }
+* { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+body { background: var(--bg-main); padding-bottom: 150px; }
+
+/* PANTALLAS DE FLUJO */
+.welcome-screen, .success-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #090d16 0%, #1e293b 100%); display: flex; align-items: center; justify-content: center; z-index: 10000; text-align: center; padding: 20px; transition: 0.5s; }
+.success-screen { display: none; }
+.welcome-content { max-width: 400px; color: white; }
+.btn-continue { background: var(--accent); padding: 15px 40px; border-radius: 50px; border: none; font-weight: 700; cursor: pointer; width: 100%; margin-top: 20px; }
+
+/* HEADER Y NAV */
+header { background: linear-gradient(135deg, #ffcc00 0%, #0033a0 50%, #cf142b 100%); color: white; text-align: center; padding: 40px 20px; border-radius: 0 0 32px 32px; }
+.category-navbar { position: sticky; top: 0; background: rgba(248, 250, 252, 0.95); display: flex; gap: 10px; overflow-x: auto; padding: 15px; z-index: 900; }
+.nav-tab { background: white; padding: 8px 16px; border-radius: 50px; text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 600; border: 1px solid #ddd; }
+.nav-tab.active { background: var(--primary); color: white; border: none; }
+
+/* ITEMS */
+.container { max-width: 600px; margin: 0 auto; padding: 10px; }
+.item-card { background: white; border-radius: 20px; padding: 16px; margin-bottom: 16px; display: flex; gap: 15px; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.item-img { width: 95px; height: 95px; object-fit: cover; border-radius: 14px; }
+.item-details { flex: 1; }
+.item-title { font-weight: 700; font-size: 16px; }
+.item-price { font-weight: 700; color: var(--primary); margin: 5px 0; }
+.btn-add { background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; cursor: pointer; }
+
+/* CARRITO */
+.floating-cart { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #0f172a; color: white; padding: 15px 30px; border-radius: 50px; cursor: pointer; font-weight: 600; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+</style>
+</head>
+<body>
+
+<!-- Pantalla Bienvenida -->
+<div class="welcome-screen" id="welcomeScreen">
+    <div class="welcome-content">
+        <h1>¡Bienvenidos!</h1>
+        <p>El verdadero sabor maracucho en México.</p>
+        <button class="btn-continue" onclick="document.getElementById('welcomeScreen').style.display='none'">Ver Menú</button>
+    </div>
+</div>
+
+<header><h1>La Garnacha Maracucha</h1></header>
+
+<div class="category-navbar">
+    <a href="#arepas" class="nav-tab active">🫓 Arepas</a>
+    <a href="#patacones" class="nav-tab">🍌 Patacones</a>
+    <a href="#bebidas" class="nav-tab">🥤 Bebidas</a>
+</div>
+
+<div class="container">
+    <div id="arepas">
+        <h2>Arepas</h2>
+        <div class="item-card"><div class="item-details"><div class="item-title">Reina Pepiada</div><div class="item-price">$100</div><button class="btn-add">Agregar</button></div><img class="item-img" src="https://images.unsplash.com/photo-1627662236973-4f8259fa2441?q=80&w=200"></div>
+    </div>
+
+    <!-- TUS NUEVAS IMÁGENES INTEGRADAS -->
+    <div id="patacones">
+        <h2>🍌 Patacones</h2>
+        <div class="item-card">
+            <div class="item-details"><div class="item-title">Patacón Mixto</div><div class="item-price">$150</div><button class="btn-add">Agregar</button></div>
+            <img class="item-img" src="https://www.sandwichtribunal.com/wp-content/uploads/2021/11/IMG_7636.jpg">
+        </div>
+        <div class="item-card">
+            <div class="item-details"><div class="item-title">Patacón La Garnacha</div><div class="item-price">$180</div><button class="btn-add">Agregar</button></div>
+            <img class="item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSafCraYwY-_jT9DUR1xEwqUghZcssV_QZP2QomXj3cjCdwBbOySMhzQdiq&s=10">
+        </div>
+    </div>
+
+    <div id="bebidas">
+        <h2>🥤 Bebidas</h2>
+        <div class="item-card">
+            <div class="item-details"><div class="item-title">Chicha Zuliana</div><div class="item-price">$50</div><button class="btn-add">Agregar</button></div>
+            <img class="item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMoZU0tVy2fmo--qAJTWKJaRg9R4xHllfj6fYxu2Egr51tmEAGtyt9Z2o&s=10">
+        </div>
+    </div>
+</div>
+
+<div class="floating-cart" onclick="document.getElementById('successScreen').style.display='flex'">Ver Pedido (WhatsApp)</div>
+
+<div class="success-screen" id="successScreen">
+    <div class="welcome-content">
+        <h1>¡Pedido Listo!</h1>
+        <button class="btn-continue" onclick="alert('Enviando a WhatsApp...')">Enviar por WhatsApp</button>
+        <button class="btn-continue" style="background:transparent; border:1px solid white" onclick="document.getElementById('successScreen').style.display='none'">Seguir Comprando</button>
+    </div>
+</div>
+
+</body>
+</html>
